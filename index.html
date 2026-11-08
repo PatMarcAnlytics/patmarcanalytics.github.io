@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patria Marcano Maldonado | Data Analyst, Automation &amp; Power BI</title>
+  <meta name="description" content="Bilingual data analyst (English/Spanish) who builds automated pipelines, Power BI dashboards and ETL workflows. Background in chemistry and clinical research.">
+  <meta property="og:title" content="Patria Marcano Maldonado | Data Analyst">
+  <meta property="og:description" content="Turning messy, manual work into systems that run.">
+  <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* 1. Your colors */
+    :root {
+      --background: #26132B;
+      --surface: #522B47;
+      --headline: #DEC1FF;
+      --text: #E9BCB7;
+      --muted: #CD9FCC;
+      --sparkle: #8EE3EF;
+    }
+
+    /* 2. The whole page */
+    body {
+      background:
+        radial-gradient(circle at 15% 10%, rgba(222, 193, 255, 0.18), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(142, 227, 239, 0.10), transparent 45%),
+        var(--background);
+      min-height: 100vh;
+      box-sizing: border-box;
+      color: var(--text);
+      font-family: "Nunito Sans", sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      line-height: 1.6;
+    }
+
+    /* 3. Text */
+    h1 {
+      color: var(--headline);
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    /* 4. Language button */
+    #lang-toggle {
+      background-color: var(--surface);
+      color: var(--headline);
+      border: 1px solid var(--headline);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    #lang-toggle:hover {
+      background-color: var(--sparkle);
+      color: var(--background);
+    }
+    /* 6. Sections */
+    section {
+      margin-top: 80px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--headline);
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+    }
+
+    .offer {
+      background-color: rgba(82, 43, 71, 0.45);
+      border-left: 3px solid var(--sparkle);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+
+    .offer h3 {
+      color: var(--text);
+      margin: 0 0 6px;
+    }
+
+    .offer p {
+      margin: 0;
+    }
+        /* 7. Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .project {
+      background-color: rgba(82, 43, 71, 0.45);
+      border: 1px solid rgba(222, 193, 255, 0.15);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(222, 193, 255, 0.15);
+      border-color: var(--headline);
+    }
+
+    .project h3 {
+      color: var(--text);
+      margin: 14px 0 8px;
+      line-height: 1.3;
+    }
+
+    .award {
+      color: #E9BCB7;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin: 10px 0 0;
+    }
+
+    /* Category tags */
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 999px;
+      color: var(--background);
+    }
+    .tag.automate { background-color: #78C0E0; }
+    .tag.build    { background-color: #94A187; }
+    .tag.analyze  { background-color: #9799CA; }
+
+    /* Dropdowns */
+    summary {
+      cursor: pointer;
+      color: var(--sparkle);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    summary:hover {
+      color: var(--headline);
+    }
+
+    /* Phones: one column */
+    @media (max-width: 700px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Respect people who turn off motion */
+    @media (prefers-reduced-motion: reduce) {
+      .project { transition: none; }
+      .project:hover { transform: none; }
+    }
+
+      /* 8. Papers */
+    .papers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .paper {
+      background-color: rgba(82, 43, 71, 0.45);
+      border: 1px solid rgba(222, 193, 255, 0.15);
+      border-radius: 14px;
+      transition: border-color 0.25s ease;
+    }
+
+    .paper:hover,
+    .paper[open] {
+      border-color: var(--headline);
+    }
+
+    .paper summary {
+      list-style: none;
+      padding: 18px 56px 18px 22px;
+      margin: 0;
+      position: relative;
+      color: inherit;
+      font-weight: 400;
+    }
+
+    .paper summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .paper summary::after {
+      content: "+";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.6rem;
+      color: var(--sparkle);
+      transition: transform 0.25s ease;
+    }
+
+    .paper[open] summary::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .paper-type {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--sparkle);
+      margin-bottom: 4px;
+    }
+
+    .paper-title {
+      display: block;
+      color: var(--headline);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .paper-meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .paper-body {
+      padding: 0 22px 20px;
+    }
+
+    .paper-authors {
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    .paper-link {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background-color: var(--headline);
+      color: var(--background);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .paper-link:hover {
+      background-color: var(--sparkle);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .paper, .paper summary::after { transition: none; }
+    }
+
+    /* 9. Contact */
+    .contact-links {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 40px;
+    }
+
+    .contact-links li {
+      margin-bottom: 8px;
+    }
+
+    .contact-links a {
+      color: var(--sparkle);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background-color: rgba(82, 43, 71, 0.45);
+      border: 1px solid rgba(222, 193, 255, 0.15);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .contact-form label {
+      color: var(--headline);
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      background-color: var(--background);
+      color: var(--text);
+      border: 1px solid rgba(222, 193, 255, 0.3);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid var(--sparkle);
+      border-color: var(--sparkle);
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    legend {
+      color: var(--headline);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .contact-form .choice {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-weight: 400;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+
+    .choice input {
+      accent-color: var(--sparkle);
+    }
+
+    .send-button {
+      margin-top: 20px;
+      align-self: flex-start;
+      background-color: var(--headline);
+      color: var(--background);
+      border: none;
+      border-radius: 999px;
+      padding: 12px 28px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .send-button:hover {
+      background-color: var(--sparkle);
+    }
+
+    /* 5. Language switching */
+    html[lang="en"] .es { display: none; }
+    html[lang="es"] .en { display: none; }
+  </style>
+</head>
+
+<body>
+  <button id="lang-toggle">Español</button>
+
+  <h1>
+    <span class="en">Turning messy, manual work into systems that run!</span>
+    <span class="es">¡Transformando procesos manuales y desordenados en sistemas que funcionan!</span>
+  </h1>
+
+  <p>
+    <span class="en">Analyst with experience in the chemical and medical world.</span>
+    <span class="es">Analista con experiencia en el mundo químico y médico.</span>
+  </p>
+
+  <section class="offers">
+    <h2>
+      <span class="en">What I can build for you</span>
+      <span class="es">Lo que puedo construir para ti</span>
+    </h2>
+
+    <div class="offer">
+      <h3>
+        <span class="en">Systems from scratch</span>
+        <span class="es">Sistemas desde cero</span>
+      </h3>
+      <p>
+        <span class="en">No tool for it yet? I design and build one: trackers, forms, databases and the workflow around them.</span>
+        <span class="es">¿No existe una herramienta para eso? La diseño y la construyo: rastreadores, formularios, bases de datos y el flujo de trabajo que los rodea.</span>
+      </p>
+    </div>
+
+    <div class="offer">
+      <h3>
+        <span class="en">Automation and ETL</span>
+        <span class="es">Automatización y ETL</span>
+      </h3>
+      <p>
+        <span class="en">If your team spends hours moving data between systems, I automate it and clean it on the way in.</span>
+        <span class="es">Si tu equipo pasa horas moviendo datos entre sistemas, lo automatizo y limpio los datos en el proceso.</span>
+      </p>
+    </div>
+
+    <div class="offer">
+      <h3>
+        <span class="en">Data people can decide with</span>
+        <span class="es">Datos para tomar decisiones</span>
+      </h3>
+      <p>
+        <span class="en">Dashboards and KPIs leaders actually open, and analysis that holds up, written in plain language.</span>
+        <span class="es">Dashboards y KPIs que los líderes sí usan y análisis sólidos, explicados en lenguaje claro.</span>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>
+      <span class="en">Selected work</span>
+      <span class="es">Proyectos destacados</span>
+    </h2>
+
+    <div class="projects">
+      <article class="project">
+        <span class="tag analyze">
+          <span class="en">Analysis</span><span class="es">Análisis</span>
+        </span>
+        <p class="award">
+          <span class="en">🏆 Judges' Choice Award</span>
+          <span class="es">🏆 Premio Selección del Jurado</span>
+        </p>
+        <h3>
+          <span class="en">How students learn in a large team-based chemistry course</span>
+          <span class="es">Cómo aprenden los estudiantes en un curso grande de química basado en equipos</span>
+        </h3>
+        <p>
+          <span class="en">Used K-means clustering in R to find patterns in student learning and performance in a large team-based learning (TBL) chemistry course.</span>
+          <span class="es">Utilicé agrupamiento K-means en R para encontrar patrones de aprendizaje y desempeño estudiantil en un curso grande de química con aprendizaje basado en equipos (TBL).</span>
+        </p>
+        <details>
+          <summary>
+            <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
+          </summary>
+          <p>
+            <span class="en">Grouped students into clusters based on their learning and performance data to show which groups thrived and which needed support. Won the Judges' Choice Award my senior year and presented at multiple research conferences.</span>
+            <span class="es">Agrupé a los estudiantes en clústeres según sus datos de aprendizaje y desempeño para identificar qué grupos sobresalían y cuáles necesitaban apoyo. Gané el Premio Selección del Jurado en mi último año y presenté en varias conferencias de investigación.</span>
+          </p>
+        </details>
+      </article>
+
+      <article class="project">
+        <span class="tag automate">
+          <span class="en">Automation</span><span class="es">Automatización</span>
+        </span>
+        <h3>
+          <span class="en">Automating a 100+ opportunity pipeline</span>
+          <span class="es">Automatización de un pipeline de más de 100 oportunidades</span>
+        </h3>
+        <p>
+          <span class="en">Manual tracking took ~20 hours a week. I built an automated workflow using only tools we already had.</span>
+          <span class="es">El rastreo manual tomaba ~20 horas semanales. Construí un flujo automatizado usando solo herramientas que ya teníamos.</span>
+        </p>
+        <details>
+          <summary>
+            <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
+          </summary>
+          <p>
+            <span class="en">Power Query pulls and cleans data from each system, VBA handles updates, and Power BI shows the results. Running as a pilot with a 3-analyst team, measured against the manual baseline.</span>
+            <span class="es">Power Query extrae y limpia los datos de cada sistema, VBA maneja las actualizaciones y Power BI muestra los resultados. Se ejecuta como piloto con un equipo de 3 analistas, comparado con el proceso manual.</span>
+          </p>
+        </details>
+      </article>
+
+      <article class="project">
+        <span class="tag build">
+          <span class="en">Built from scratch</span><span class="es">Desde cero</span>
+        </span>
+        <h3>
+          <span class="en">Pipeline tracker with a dynamic timeline</span>
+          <span class="es">Rastreador de pipeline con línea de tiempo dinámica</span>
+        </h3>
+        <p>
+          <span class="en">One view of every opportunity and its deadlines, updating as dates move.</span>
+          <span class="es">Una sola vista de cada oportunidad y sus fechas límite, que se actualiza cuando cambian las fechas.</span>
+        </p>
+        <details>
+          <summary>
+            <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
+          </summary>
+          <p>
+            <span class="en">Built in Excel with VBA macros that redraw the timeline whenever the data changes.</span>
+            <span class="es">Construido en Excel con macros de VBA que redibujan la línea de tiempo cada vez que cambian los datos.</span>
+          </p>
+        </details>
+      </article>
+
+      <article class="project">
+        <span class="tag analyze">
+          <span class="en">Analysis</span><span class="es">Análisis</span>
+        </span>
+        <h3>
+          <span class="en">Clinical outcomes research</span>
+          <span class="es">Investigación de resultados clínicos</span>
+        </h3>
+        <p>
+          <span class="en">Study data management and outcomes analysis at UCF's College of Nursing.</span>
+          <span class="es">Manejo de datos de estudios y análisis de resultados en la Facultad de Enfermería de UCF.</span>
+        </p>
+        <details>
+          <summary>
+            <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
+          </summary>
+          <p>
+            <span class="en">Managed data in REDCap under IRB rules and ran regression analyses in R, SPSS and SAS.</span>
+            <span class="es">Manejé datos en REDCap bajo normas del IRB y realicé análisis de regresión en R, SPSS y SAS.</span>
+          </p>
+        </details>
+      </article>
+
+      <article class="project">
+        <span class="tag analyze">
+          <span class="en">Analysis</span><span class="es">Análisis</span>
+        </span>
+        <h3>
+          <span class="en">What patients say about their medication</span>
+          <span class="es">Lo que dicen los pacientes sobre sus medicamentos</span>
+        </h3>
+        <p>
+          <span class="en">Analyzing patient-written drug reviews to understand how people rate effectiveness.</span>
+          <span class="es">Análisis de reseñas escritas por pacientes para entender cómo califican la efectividad.</span>
+        </p>
+        <details>
+          <summary>
+            <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
+          </summary>
+          <p>
+            <span class="en">Python and pandas for cleaning, plus machine learning models on the Drugs.com review dataset.</span>
+            <span class="es">Python y pandas para limpiar datos, y modelos de machine learning con el conjunto de reseñas de Drugs.com.</span>
+          </p>
+        </details>
+      </article>
+
+    </div>
+  </section>
+  
+  <section>
+    <h2>
+      <span class="en">Papers and presentations</span>
+      <span class="es">Publicaciones y presentaciones</span>
+    </h2>
+    <p>
+      <span class="en">Click any title to see what it's about.</span>
+      <span class="es">Haz clic en un título para ver de qué se trata.</span>
+    </p>
+
+    <div class="papers">
+
+      <!-- ===== COPY FROM HERE to add a paper ===== -->
+      <details class="paper">
+        <summary>
+          <span class="paper-type">
+            <span class="en">Journal article</span><span class="es">Artículo</span>
+          </span>
+          <span class="paper-title">Team-Based Learning in a Senior-Level Forensic Chemistry Course</span>
+          <span class="paper-meta">College Teaching, 2025</span>
+        </summary>
+        <div class="paper-body">
+          <p class="paper-authors">Lemma, A., Maldonado, P. M., Goberville, L., Donnelly, J., &amp; Legron-Rodriguez, T.</p>
+          <p>
+            <span class="en">WRITE 1–2 SENTENCES: what the study looked at and what it found.</span>
+            <span class="es">ESCRIBE 1–2 ORACIONES: qué estudió y qué encontró.</span>
+          </p>
+          <!-- When you have the link, remove the comment marks around this line:
+          <a class="paper-link" href="PASTE-LINK-HERE" target="_blank" rel="noopener"><span class="en">Read the paper</span><span class="es">Leer el artículo</span></a>
+          -->
+        </div>
+      </details>
+      <!-- ===== TO HERE ===== -->
+
+      <details class="paper">
+        <summary>
+          <span class="paper-type">
+            <span class="en">Journal article</span><span class="es">Artículo</span>
+          </span>
+          <span class="paper-title">Indicators of Team Function in a Large-Enrollment Team-Based Learning General Chemistry Course</span>
+          <span class="paper-meta">International Journal of the Scholarship of Teaching and Learning (accepted)</span>
+        </summary>
+        <div class="paper-body">
+          <p class="paper-authors">Donnelly, J., Maldonado, P. M., &amp; Legron-Rodriguez, T.</p>
+          <p>
+            <span class="en">WRITE 1–2 SENTENCES: what the study looked at and what it found.</span>
+            <span class="es">ESCRIBE 1–2 ORACIONES: qué estudió y qué encontró.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="paper">
+        <summary>
+          <span class="paper-type">
+            <span class="en">Poster · 🏆 Judges' Choice Award</span><span class="es">Póster · 🏆 Premio Selección del Jurado</span>
+          </span>
+          <span class="paper-title">Team composition and performance in a large-enrollment Team-Based Learning (TBL) introductory chemistry course</span>
+          <span class="paper-meta">UCF Student Scholar Symposium, 2024</span>
+        </summary>
+        <div class="paper-body">
+          <p class="paper-authors">Marcano Maldonado, P. (presenting author), Goberville, L., Donnelly, J., &amp; Legron-Rodriguez, T.</p>
+          <p>
+            <span class="en">Used K-means clustering in R to group students by learning and performance data and see how team makeup related to results. Also presented at the Florida Undergraduate Research Conference and the ACS Spring 2024 National Meeting.</span>
+            <span class="es">Utilicé agrupamiento K-means en R para agrupar a los estudiantes según sus datos de aprendizaje y desempeño, y analizar cómo la composición de los equipos se relacionaba con los resultados. También presentado en la Florida Undergraduate Research Conference y en la ACS Spring 2024 National Meeting.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="paper">
+        <summary>
+          <span class="paper-type">
+            <span class="en">Talk</span><span class="es">Ponencia</span>
+          </span>
+          <span class="paper-title">Indicators of team function in a large-enrollment team-based learning general chemistry course</span>
+          <span class="paper-meta">ACS Spring 2024 National Meeting · Biennial Conference on Chemistry Education, 2024</span>
+        </summary>
+        <div class="paper-body">
+          <p class="paper-authors">Donnelly, J., Marcano Maldonado, P., Goberville, L., &amp; Legron-Rodriguez, T.</p>
+          <p>
+            <span class="en">WRITE 1–2 SENTENCES about this talk.</span>
+            <span class="es">ESCRIBE 1–2 ORACIONES sobre esta ponencia.</span>
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>
+      <span class="en">Let's work together</span>
+      <span class="es">Trabajemos juntos</span>
+    </h2>
+    <p>
+      <span class="en">Open to remote roles in healthcare, pharma, clinical research and BI, and to projects that need a system built or automated.</span>
+      <span class="es">Disponible para puestos remotos en salud, farmacéutica, investigación clínica y BI, y para proyectos que necesiten un sistema creado o automatizado.</span>
+    </p>
+
+    <ul class="contact-links">
+      <li><a href="mailto:patmarc.analystics@gmail.com">patmarc.analystics@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/pmm76/" target="_blank" rel="noopener">LinkedIn</a></li>      <li>
+        <span class="en">Orlando, FL · Open to relocating to Puerto Rico</span>
+        <span class="es">Orlando, FL · Disponible para mudarme a Puerto Rico</span>
+      </li>
+    </ul>
+
+    <form class="contact-form" action="https://formspree.io/f/moeezjlq" method="POST">
+
+      <label for="name">
+        <span class="en">Your name</span><span class="es">Tu nombre</span>
+      </label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">
+        <span class="en">Your email</span><span class="es">Tu correo electrónico</span>
+      </label>
+      <input type="email" id="email" name="email" required>
+
+      <fieldset>
+        <legend>
+          <span class="en">What's this about?</span><span class="es">¿De qué se trata?</span>
+        </legend>
+        <label class="choice">
+          <input type="radio" name="topic" value="Job opportunity" checked>
+          <span class="en">A job opportunity</span><span class="es">Una oportunidad de empleo</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="topic" value="Project request">
+          <span class="en">A project I need built</span><span class="es">Un proyecto que necesito</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="topic" value="Other">
+          <span class="en">Something else</span><span class="es">Otra cosa</span>
+        </label>
+      </fieldset>
+
+      <label for="message">
+        <span class="en">Tell me about it</span><span class="es">Cuéntame</span>
+      </label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="send-button">
+        <span class="en">Send request</span><span class="es">Enviar solicitud</span>
+      </button>
+    </form>
+  </section>
+
+  <script>
+    const button = document.getElementById("lang-toggle");
+
+    button.addEventListener("click", () => {
+      const page = document.documentElement;
+      const switchingToSpanish = page.lang === "en";
+
+      page.lang = switchingToSpanish ? "es" : "en";
+      button.textContent = switchingToSpanish ? "English" : "Español";
+    });
+  </script>
+</body>
+</html>
