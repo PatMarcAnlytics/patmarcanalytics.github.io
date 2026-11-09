@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patria Marcano Maldonado | Data Analyst, Automation &amp; Power BI</title>
+  <title>Patria Marcano Maldonado | Data Analyst, Automation &amp; Power BI</title>
   <meta name="description" content="Bilingual data analyst (English/Spanish) who builds automated pipelines, Power BI dashboards and ETL workflows. Background in chemistry and clinical research.">
   <meta property="og:title" content="Patria Marcano Maldonado | Data Analyst">
   <meta property="og:description" content="Turning messy, manual work into systems that run.">
@@ -76,6 +76,7 @@
       font-family: "Cormorant Garamond", serif;
       color: var(--headline);
       font-size: 2.2rem;
+      line-height: 1.15;
       margin-bottom: 24px;
     }
 
@@ -358,6 +359,248 @@
       background-color: var(--sparkle);
     }
 
+    /* 10. Extra design */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section,
+    .hero {
+      scroll-margin-top: 80px;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 8% 12%, #DEC1FF, transparent),
+        radial-gradient(1.5px 1.5px at 22% 68%, #8EE3EF, transparent),
+        radial-gradient(2px 2px at 35% 30%, #E9BCB7, transparent),
+        radial-gradient(1.5px 1.5px at 48% 85%, #DEC1FF, transparent),
+        radial-gradient(2.5px 2.5px at 62% 18%, #DEC1FF, transparent),
+        radial-gradient(1.5px 1.5px at 75% 52%, #8EE3EF, transparent),
+        radial-gradient(2px 2px at 88% 8%, #E9BCB7, transparent),
+        radial-gradient(2px 2px at 93% 74%, #DEC1FF, transparent),
+        radial-gradient(2px 2px at 15% 92%, #8EE3EF, transparent),
+        radial-gradient(1.5px 1.5px at 55% 45%, #E9BCB7, transparent),
+        radial-gradient(1.5px 1.5px at 4% 40%, #DEC1FF, transparent),
+        radial-gradient(1.5px 1.5px at 28% 5%, #8EE3EF, transparent),
+        radial-gradient(1px 1px at 42% 58%, #DEC1FF, transparent),
+        radial-gradient(2px 2px at 70% 90%, #E9BCB7, transparent),
+        radial-gradient(1.5px 1.5px at 82% 33%, #DEC1FF, transparent),
+        radial-gradient(1.5px 1.5px at 97% 50%, #8EE3EF, transparent),
+        radial-gradient(1px 1px at 12% 60%, #E9BCB7, transparent),
+        radial-gradient(1px 1px at 66% 70%, #DEC1FF, transparent),
+        radial-gradient(1px 1px at 50% 10%, #8EE3EF, transparent),
+        radial-gradient(1.5px 1.5px at 85% 95%, #DEC1FF, transparent);
+      animation: twinkle 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.45; }
+      to   { opacity: 1; }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 60px 0 20px;
+    }
+
+    .hello {
+      color: var(--sparkle);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin: 0 0 8px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      margin: 0 0 16px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: rgba(82, 43, 71, 0.6);
+      border: 1px solid rgba(222, 193, 255, 0.2);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #94A187;
+      box-shadow: 0 0 0 4px rgba(148, 161, 135, 0.25);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-main {
+      background-color: var(--headline);
+      color: var(--background);
+    }
+
+    .btn-main:hover {
+      background-color: var(--sparkle);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--headline);
+      color: var(--headline);
+    }
+
+    .btn-ghost:hover {
+      background-color: var(--headline);
+      color: var(--background);
+    }
+
+    /* Section titles get a small sparkle line */
+    section h2::after {
+      content: "";
+      display: block;
+      width: 56px;
+      height: 3px;
+      margin-top: 10px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--sparkle), var(--headline));
+    }
+
+    /* 11. Side navigation */
+    .side-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      margin: -40px -24px 24px;
+      padding: 12px 24px;
+      background-color: rgba(38, 19, 43, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(222, 193, 255, 0.12);
+    }
+
+    .side-nav a {
+      flex-shrink: 0;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .side-nav a:hover {
+      color: var(--headline);
+    }
+
+    .side-nav a.active {
+      color: var(--background);
+      background-color: var(--headline);
+    }
+
+    /* Big screens: turn it into a sidebar on the left */
+    @media (min-width: 1200px) {
+      .side-nav {
+        position: fixed;
+        top: 50%;
+        left: 32px;
+        transform: translateY(-50%);
+        flex-direction: column;
+        gap: 4px;
+        margin: 0;
+        padding: 16px;
+        border: 1px solid rgba(222, 193, 255, 0.15);
+        border-radius: 18px;
+        background-color: rgba(82, 43, 71, 0.35);
+      }
+
+      .side-nav a {
+        padding: 8px 14px;
+      }
+
+      section,
+      .hero {
+        scroll-margin-top: 24px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .stars { animation: none; }
+    }
+
+    /* 12. Floating shapes */
+    .shapes {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      border: 1px solid rgba(222, 193, 255, 0.10);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    .circle { border-radius: 50%; }
+    .square { border-radius: 14px; }
+
+    /* Circles */
+    .c1 { width: 420px; height: 420px; top: -120px; right: -140px; }
+    .c2 { width: 180px; height: 180px; top: 55%; left: -60px; background-color: rgba(222, 193, 255, 0.03); animation-duration: 22s; }
+    .c3 { width: 90px;  height: 90px;  top: 30%; right: 12%; border-color: rgba(142, 227, 239, 0.12); animation-duration: 15s; }
+    .c4 { width: 260px; height: 260px; bottom: -90px; right: 20%; animation-duration: 26s; }
+
+    /* Squares, tilted */
+    .s1 { width: 140px; height: 140px; top: 12%; left: 6%;  transform: rotate(18deg); animation-name: drift-tilt; }
+    .s2 { width: 70px;  height: 70px;  top: 70%; right: 8%;  transform: rotate(-12deg); background-color: rgba(222, 193, 255, 0.03); animation-name: drift-tilt; animation-duration: 20s; }
+    .s3 { width: 220px; height: 220px; bottom: 8%; left: 18%; transform: rotate(32deg); border-color: rgba(233, 188, 183, 0.08); animation-name: drift-tilt; animation-duration: 24s; }
+    .s4 { width: 46px;  height: 46px;  top: 42%; left: 45%; transform: rotate(45deg); border-color: rgba(142, 227, 239, 0.10); animation-name: drift-tilt; animation-duration: 16s; }
+
+    @keyframes drift {
+      from { translate: 0 0; }
+      to   { translate: 0 -30px; }
+    }
+
+    @keyframes drift-tilt {
+      from { translate: 0 0;     rotate: 0deg; }
+      to   { translate: 0 -24px; rotate: 10deg; }
+    }
+
+    /* Fewer shapes on phones so it stays calm */
+    @media (max-width: 700px) {
+      .c3, .s2, .s4 { display: none; }
+      .c1 { width: 260px; height: 260px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .shape { animation: none; }
+    }
+
     /* 5. Language switching */
     html[lang="en"] .es { display: none; }
     html[lang="es"] .en { display: none; }
@@ -365,7 +608,34 @@
 </head>
 
 <body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <div class="shapes" aria-hidden="true">
+    <span class="shape circle c1"></span>
+    <span class="shape circle c2"></span>
+    <span class="shape circle c3"></span>
+    <span class="shape circle c4"></span>
+    <span class="shape square s1"></span>
+    <span class="shape square s2"></span>
+    <span class="shape square s3"></span>
+    <span class="shape square s4"></span>
+  </div>
+
+  <nav class="side-nav" aria-label="Sections">
+    <a href="#top"><span class="en">Home</span><span class="es">Inicio</span></a>
+    <a href="#build"><span class="en">What I build</span><span class="es">Lo que construyo</span></a>
+    <a href="#work"><span class="en">Work</span><span class="es">Proyectos</span></a>
+    <a href="#papers"><span class="en">Papers</span><span class="es">Publicaciones</span></a>
+    <a href="#contact"><span class="en">Contact</span><span class="es">Contacto</span></a>
+  </nav>
+
   <button id="lang-toggle">Español</button>
+
+  <header class="hero" id="top">
+  <p class="hello">
+    <span class="en">Hi, I'm Patria Marcano Maldonado</span>
+    <span class="es">Hola, soy Patria Marcano Maldonado</span>
+  </p>
 
   <h1>
     <span class="en">Turning messy, manual work into systems that run!</span>
@@ -377,7 +647,19 @@
     <span class="es">Analista con experiencia en el mundo químico y médico.</span>
   </p>
 
-  <section class="offers">
+  <p class="status">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="en">Open to remote roles · M.S. Data Analytics, December 2026</span>
+    <span class="es">Disponible para puestos remotos · M.S. en Análisis de Datos, diciembre 2026</span>
+  </p>
+
+  <div class="hero-buttons">
+    <a class="btn btn-main" href="#work"><span class="en">See my work</span><span class="es">Ver mis proyectos</span></a>
+    <a class="btn btn-ghost" href="#contact"><span class="en">Contact me</span><span class="es">Contáctame</span></a>
+  </div>
+  </header>
+
+  <section class="offers" id="build">
     <h2>
       <span class="en">What I can build for you</span>
       <span class="es">Lo que puedo construir para ti</span>
@@ -417,7 +699,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="work">
     <h2>
       <span class="en">Selected work</span>
       <span class="es">Proyectos destacados</span>
@@ -445,8 +727,8 @@
             <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
           </summary>
           <p>
-            <span class="en">Grouped students into clusters based on their learning and performance data to show which groups thrived and which needed support. Won the Judges' Choice Award my senior year and presented at multiple research conferences.</span>
-            <span class="es">Agrupé a los estudiantes en clústeres según sus datos de aprendizaje y desempeño para identificar qué grupos sobresalían y cuáles necesitaban apoyo. Gané el Premio Selección del Jurado en mi último año y presenté en varias conferencias de investigación.</span>
+            <span class="en">Grouped students into clusters based on their learning and performance data to show which groups thrived and which needed support. Won the Judges' Choice Award at the 2024 UCF Student Scholar Symposium and presented at the Florida Undergraduate Research Conference and the ACS Spring 2024 National Meeting.</span>
+            <span class="es">Agrupé a los estudiantes en clústeres según sus datos de aprendizaje y desempeño para identificar qué grupos sobresalían y cuáles necesitaban apoyo. Gané el Premio Selección del Jurado en el UCF Student Scholar Symposium 2024 y presenté en la Florida Undergraduate Research Conference y en la ACS Spring 2024 National Meeting.</span>
           </p>
         </details>
       </article>
@@ -546,7 +828,7 @@
     </div>
   </section>
   
-  <section>
+  <section id="papers">
     <h2>
       <span class="en">Papers and presentations</span>
       <span class="es">Publicaciones y presentaciones</span>
@@ -558,27 +840,25 @@
 
     <div class="papers">
 
-      <!-- ===== COPY FROM HERE to add a paper ===== -->
       <details class="paper">
         <summary>
           <span class="paper-type">
             <span class="en">Journal article</span><span class="es">Artículo</span>
           </span>
-          <span class="paper-title">Team-Based Learning in a Senior-Level Forensic Chemistry Course</span>
+          <span class="paper-title">Team-Based Learning in a Senior-Level Forensic Chemistry Course: Team Gains, Contribution to Individual Achievement, and Students' Feelings</span>
           <span class="paper-meta">College Teaching, 2025</span>
         </summary>
         <div class="paper-body">
-          <p class="paper-authors">Lemma, A., Maldonado, P. M., Goberville, L., Donnelly, J., &amp; Legron-Rodriguez, T.</p>
+          <p class="paper-authors">Lemma, A., Marcano Maldonado, P., Goberville, L., Donnelly, J., &amp; Legron-Rodriguez, T.</p>
           <p>
-            <span class="en">WRITE 1–2 SENTENCES: what the study looked at and what it found.</span>
-            <span class="es">ESCRIBE 1–2 ORACIONES: qué estudió y qué encontró.</span>
+            <span class="en">Examines how well Team-Based Learning works in a senior-level forensic chemistry course, looking at team performance, individual exam results and student perspectives. Every team outscored its own highest-scoring member, so even top students benefited from working in teams.</span>
+            <span class="es">Examina la efectividad del aprendizaje basado en equipos (TBL) en un curso avanzado de química forense, analizando el desempeño de los equipos, los resultados individuales en los exámenes y la perspectiva de los estudiantes. Todos los equipos superaron a su miembro con la mejor puntuación, por lo que incluso los mejores estudiantes se beneficiaron del trabajo en equipo.</span>
           </p>
-          <!-- When you have the link, remove the comment marks around this line:
-          <a class="paper-link" href="PASTE-LINK-HERE" target="_blank" rel="noopener"><span class="en">Read the paper</span><span class="es">Leer el artículo</span></a>
-          -->
+          <a class="paper-link" href="https://doi.org/10.1080/87567555.2025.2450709" target="_blank" rel="noopener">
+            <span class="en">Read the paper</span><span class="es">Leer el artículo</span>
+          </a>
         </div>
       </details>
-      <!-- ===== TO HERE ===== -->
 
       <details class="paper">
         <summary>
@@ -586,14 +866,17 @@
             <span class="en">Journal article</span><span class="es">Artículo</span>
           </span>
           <span class="paper-title">Indicators of Team Function in a Large-Enrollment Team-Based Learning General Chemistry Course</span>
-          <span class="paper-meta">International Journal of the Scholarship of Teaching and Learning (accepted)</span>
+          <span class="paper-meta">Journal of the Scholarship of Teaching and Learning (accepted)</span>
         </summary>
         <div class="paper-body">
-          <p class="paper-authors">Donnelly, J., Maldonado, P. M., &amp; Legron-Rodriguez, T.</p>
+          <p class="paper-authors">Donnelly, J., Marcano Maldonado, P., &amp; Legron-Rodriguez, T.</p>
           <p>
-            <span class="en">WRITE 1–2 SENTENCES: what the study looked at and what it found.</span>
-            <span class="es">ESCRIBE 1–2 ORACIONES: qué estudió y qué encontró.</span>
+            <span class="en">Examines how group dynamics, accountability and cohesion shape student learning in large STEM classes. It looks at how student teams function behind the scenes when a chemistry lecture hall holds hundreds of students.</span>
+            <span class="es">Examina cómo la dinámica de grupo, la responsabilidad y la cohesión influyen en el aprendizaje en clases grandes de STEM. Analiza cómo funcionan los equipos de estudiantes cuando un salón de química tiene cientos de alumnos.</span>
           </p>
+          <!-- When it's published, remove the comment marks and paste the link:
+          <a class="paper-link" href="PASTE-LINK-HERE" target="_blank" rel="noopener"><span class="en">Read the paper</span><span class="es">Leer el artículo</span></a>
+          -->
         </div>
       </details>
 
@@ -611,6 +894,9 @@
             <span class="en">Used K-means clustering in R to group students by learning and performance data and see how team makeup related to results. Also presented at the Florida Undergraduate Research Conference and the ACS Spring 2024 National Meeting.</span>
             <span class="es">Utilicé agrupamiento K-means en R para agrupar a los estudiantes según sus datos de aprendizaje y desempeño, y analizar cómo la composición de los equipos se relacionaba con los resultados. También presentado en la Florida Undergraduate Research Conference y en la ACS Spring 2024 National Meeting.</span>
           </p>
+          <a class="paper-link" href="https://researchweek.ucf.edu/2024-student-scholar-symposium-winners/" target="_blank" rel="noopener">
+            <span class="en">See the award</span><span class="es">Ver el premio</span>
+          </a>
         </div>
       </details>
 
@@ -625,8 +911,8 @@
         <div class="paper-body">
           <p class="paper-authors">Donnelly, J., Marcano Maldonado, P., Goberville, L., &amp; Legron-Rodriguez, T.</p>
           <p>
-            <span class="en">WRITE 1–2 SENTENCES about this talk.</span>
-            <span class="es">ESCRIBE 1–2 ORACIONES sobre esta ponencia.</span>
+            <span class="en">A study of how student teams collaborate in large, foundational STEM courses.</span>
+            <span class="es">Un estudio sobre cómo colaboran los equipos de estudiantes en cursos grandes y fundamentales de STEM.</span>
           </p>
         </div>
       </details>
@@ -646,7 +932,8 @@
 
     <ul class="contact-links">
       <li><a href="mailto:patmarc.analystics@gmail.com">patmarc.analystics@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/pmm76/" target="_blank" rel="noopener">LinkedIn</a></li>      <li>
+      <li><a href="https://www.linkedin.com/in/pmm76/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li>
         <span class="en">Orlando, FL · Open to relocating to Puerto Rico</span>
         <span class="es">Orlando, FL · Disponible para mudarme a Puerto Rico</span>
       </li>
@@ -703,6 +990,22 @@
       page.lang = switchingToSpanish ? "es" : "en";
       button.textContent = switchingToSpanish ? "English" : "Español";
     });
+
+    // Highlight the sidebar link for the section on screen
+    const navLinks = document.querySelectorAll(".side-nav a");
+    const sections = document.querySelectorAll("#top, section[id]");
+
+    const watcher = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+
+    sections.forEach((section) => watcher.observe(section));
   </script>
 </body>
 </html>
