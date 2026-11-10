@@ -600,7 +600,12 @@
     @media (prefers-reduced-motion: reduce) {
       .shape { animation: none; }
     }
-
+    .site-footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(222, 193, 255, 0.12);
+      font-size: 0.85rem;
+    }
     /* 5. Language switching */
     html[lang="en"] .es { display: none; }
     html[lang="es"] .en { display: none; }
@@ -733,25 +738,25 @@
         </details>
       </article>
 
-      <article class="project">
+            <article class="project">
         <span class="tag automate">
           <span class="en">Automation</span><span class="es">Automatización</span>
         </span>
         <h3>
-          <span class="en">Automating a 100+ opportunity pipeline</span>
-          <span class="es">Automatización de un pipeline de más de 100 oportunidades</span>
+          <span class="en">Automating pipeline data management</span>
+          <span class="es">Automatización del manejo de datos del pipeline</span>
         </h3>
         <p>
-          <span class="en">Manual tracking took ~20 hours a week. I built an automated workflow using only tools we already had.</span>
-          <span class="es">El rastreo manual tomaba ~20 horas semanales. Construí un flujo automatizado usando solo herramientas que ya teníamos.</span>
+          <span class="en">Replaced manual tracking across multiple systems with an automated workflow that cleans, updates and reports pipeline data, using tools the team already had.</span>
+          <span class="es">Reemplacé el rastreo manual en varios sistemas con un flujo automatizado que limpia, actualiza y reporta los datos del pipeline, usando herramientas que el equipo ya tenía.</span>
         </p>
         <details>
           <summary>
             <span class="en">See how I did it</span><span class="es">Ver cómo lo hice</span>
           </summary>
           <p>
-            <span class="en">Power Query pulls and cleans data from each system, VBA handles updates, and Power BI shows the results. Running as a pilot with a 3-analyst team, measured against the manual baseline.</span>
-            <span class="es">Power Query extrae y limpia los datos de cada sistema, VBA maneja las actualizaciones y Power BI muestra los resultados. Se ejecuta como piloto con un equipo de 3 analistas, comparado con el proceso manual.</span>
+            <span class="en">Power Query pulls and cleans data from each source, VBA macros handle the updates, and Power BI dashboards turn it into analysis leaders can act on. The result: less manual entry, fewer errors and more time for real analysis.</span>
+            <span class="es">Power Query extrae y limpia los datos de cada fuente, macros de VBA manejan las actualizaciones y dashboards de Power BI los convierten en análisis útiles para la toma de decisiones. El resultado: menos entrada manual, menos errores y más tiempo para el análisis.</span>
           </p>
         </details>
       </article>
@@ -979,6 +984,10 @@
       </button>
     </form>
   </section>
+
+  <footer class="site-footer">
+    <p>© 2026 Patria Marcano Maldonado · pmmanalytics.com</p>
+  </footer>
 
   <script>
     const button = document.getElementById("lang-toggle");
