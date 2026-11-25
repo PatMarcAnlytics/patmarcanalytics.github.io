@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* 1. Your colors */
     :root {
       --background: #26132B;
       --surface: #522B47;
@@ -22,7 +21,6 @@
       --sparkle: #8EE3EF;
     }
 
-    /* 2. The whole page */
     body {
       background:
         radial-gradient(circle at 15% 10%, rgba(222, 193, 255, 0.18), transparent 40%),
@@ -38,7 +36,6 @@
       line-height: 1.6;
     }
 
-    /* 3. Text */
     h1 {
       color: var(--headline);
       font-family: "Cormorant Garamond", serif;
@@ -51,7 +48,6 @@
       color: var(--muted);
     }
 
-    /* 4. Language button */
     #lang-toggle {
       background-color: var(--surface);
       color: var(--headline);
@@ -67,7 +63,6 @@
       background-color: var(--sparkle);
       color: var(--background);
     }
-    /* 6. Sections */
     section {
       margin-top: 80px;
     }
@@ -130,7 +125,6 @@
       margin: 10px 0 0;
     }
 
-    /* Category tags */
     .tag {
       display: inline-block;
       font-size: 0.8rem;
@@ -143,7 +137,6 @@
     .tag.build    { background-color: #94A187; }
     .tag.analyze  { background-color: #9799CA; }
 
-    /* Dropdowns */
     summary {
       cursor: pointer;
       color: var(--sparkle);
@@ -155,20 +148,17 @@
       color: var(--headline);
     }
 
-    /* Phones: one column */
     @media (max-width: 700px) {
       .projects {
         grid-template-columns: 1fr;
       }
     }
 
-    /* Respect people who turn off motion */
     @media (prefers-reduced-motion: reduce) {
       .project { transition: none; }
       .project:hover { transform: none; }
     }
 
-      /* 8. Papers */
     .papers {
       display: flex;
       flex-direction: column;
@@ -265,7 +255,6 @@
       .paper, .paper summary::after { transition: none; }
     }
 
-    /* 9. Contact */
     .contact-links {
       list-style: none;
       padding: 0;
@@ -359,7 +348,6 @@
       background-color: var(--sparkle);
     }
 
-    /* 10. Extra design */
     html {
       scroll-behavior: smooth;
     }
@@ -403,7 +391,6 @@
       to   { opacity: 1; }
     }
 
-    /* Hero */
     .hero {
       padding: 60px 0 20px;
     }
@@ -475,7 +462,6 @@
       color: var(--background);
     }
 
-    /* Section titles get a small sparkle line */
     section h2::after {
       content: "";
       display: block;
@@ -486,7 +472,6 @@
       background: linear-gradient(90deg, var(--sparkle), var(--headline));
     }
 
-    /* 11. Side navigation */
     .side-nav {
       position: sticky;
       top: 0;
@@ -520,7 +505,6 @@
       background-color: var(--headline);
     }
 
-    /* Big screens: turn it into a sidebar on the left */
     @media (min-width: 1200px) {
       .side-nav {
         position: fixed;
@@ -551,7 +535,6 @@
       .stars { animation: none; }
     }
 
-    /* 12. Floating shapes */
     .shapes {
       position: fixed;
       inset: 0;
@@ -569,13 +552,11 @@
     .circle { border-radius: 50%; }
     .square { border-radius: 14px; }
 
-    /* Circles */
     .c1 { width: 420px; height: 420px; top: -120px; right: -140px; }
     .c2 { width: 180px; height: 180px; top: 55%; left: -60px; background-color: rgba(222, 193, 255, 0.03); animation-duration: 22s; }
     .c3 { width: 90px;  height: 90px;  top: 30%; right: 12%; border-color: rgba(142, 227, 239, 0.12); animation-duration: 15s; }
     .c4 { width: 260px; height: 260px; bottom: -90px; right: 20%; animation-duration: 26s; }
 
-    /* Squares, tilted */
     .s1 { width: 140px; height: 140px; top: 12%; left: 6%;  transform: rotate(18deg); animation-name: drift-tilt; }
     .s2 { width: 70px;  height: 70px;  top: 70%; right: 8%;  transform: rotate(-12deg); background-color: rgba(222, 193, 255, 0.03); animation-name: drift-tilt; animation-duration: 20s; }
     .s3 { width: 220px; height: 220px; bottom: 8%; left: 18%; transform: rotate(32deg); border-color: rgba(233, 188, 183, 0.08); animation-name: drift-tilt; animation-duration: 24s; }
@@ -591,7 +572,6 @@
       to   { translate: 0 -24px; rotate: 10deg; }
     }
 
-    /* Fewer shapes on phones so it stays calm */
     @media (max-width: 700px) {
       .c3, .s2, .s4 { display: none; }
       .c1 { width: 260px; height: 260px; }
@@ -606,7 +586,48 @@
       border-top: 1px solid rgba(222, 193, 255, 0.12);
       font-size: 0.85rem;
     }
-    /* 5. Language switching */
+
+    .reveal {
+      opacity: 0;
+    }
+
+    .reveal.visible {
+      animation: rise 0.7s ease both;
+      animation-delay: var(--delay, 0s);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; translate: 0 24px; }
+      to   { opacity: 1; translate: 0 0; }
+    }
+
+    .sparkle {
+      position: fixed;
+      z-index: 50;
+      pointer-events: none;
+      line-height: 1;
+      animation: sparkle-fade 0.9s ease-out forwards;
+    }
+
+    @keyframes sparkle-fade {
+      from { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+      to   { opacity: 0; transform: translate(-50%, -50%) translateY(14px) scale(0.3) rotate(90deg); }
+    }
+
+    .shape {
+      margin-left: calc(var(--mx, 0) * var(--depth, 20) * -1px);
+      margin-top: calc(var(--my, 0) * var(--depth, 20) * -1px);
+      transition: margin 0.8s ease-out;
+    }
+    .c1 { --depth: 18; }  .c2 { --depth: 32; }  .c3 { --depth: 50; }  .c4 { --depth: 24; }
+    .s1 { --depth: 40; }  .s2 { --depth: 55; }  .s3 { --depth: 28; }  .s4 { --depth: 60; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; }
+      .reveal.visible { animation: none; }
+      .shape { transition: none; }
+    }
+
     html[lang="en"] .es { display: none; }
     html[lang="es"] .en { display: none; }
   </style>
@@ -937,7 +958,7 @@
             <span class="en">Talk</span><span class="es">Ponencia</span>
           </span>
           <span class="paper-title">Indicators of team function in a large-enrollment team-based learning general chemistry course</span>
-          <span class="paper-meta">ACS Spring 2024 National Meeting · Biennial Conference on Chemistry Education, 2024</span>
+          <span class="paper-meta">ACS Spring 2024 National Meeting · Biannual Conference on Chemistry related topics, 2024</span>
         </summary>
         <div class="paper-body">
           <p class="paper-authors">Donnelly, J., Marcano Maldonado, P., Goberville, L., &amp; Legron-Rodriguez, T.</p>
@@ -1041,6 +1062,62 @@
     }, { rootMargin: "-45% 0px -50% 0px" });
 
     sections.forEach((section) => watcher.observe(section));
+
+        // ===== Movement =====
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mouse = window.matchMedia("(pointer: fine)").matches;
+
+    if (!calm) {
+      const cards = document.querySelectorAll(".offer, .project, .paper, .contact-form");
+
+      const revealer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      cards.forEach((card) => {
+        const position = Array.from(card.parentElement.children).indexOf(card);
+        card.style.setProperty("--delay", Math.min(position, 5) * 0.08 + "s");
+        card.classList.add("reveal");
+        revealer.observe(card);
+      });
+    }
+
+    if (!calm && mouse) {
+      const colors = ["#DEC1FF", "#8EE3EF", "#E9BCB7"];
+      let lastSparkle = 0;
+
+      document.addEventListener("mousemove", (event) => {
+        const now = Date.now();
+        if (now - lastSparkle < 45) return;
+        lastSparkle = now;
+
+        const sparkle = document.createElement("span");
+        sparkle.className = "sparkle";
+        sparkle.textContent = "✦";
+        sparkle.style.left = event.clientX + "px";
+        sparkle.style.top = event.clientY + "px";
+        sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+        sparkle.style.fontSize = 8 + Math.random() * 8 + "px";
+        document.body.appendChild(sparkle);
+        sparkle.addEventListener("animationend", () => sparkle.remove());
+      });
+    }
+
+    if (!calm && mouse) {
+      const shapes = document.querySelector(".shapes");
+
+      document.addEventListener("mousemove", (event) => {
+        const x = event.clientX / window.innerWidth - 0.5;
+        const y = event.clientY / window.innerHeight - 0.5;
+        shapes.style.setProperty("--mx", x.toFixed(3));
+        shapes.style.setProperty("--my", y.toFixed(3));
+      });
+    }
   </script>
 </body>
 </html>
